@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 import socket
+import subprocess
 
 app = Flask(__name__)
 
@@ -7,7 +8,8 @@ app = Flask(__name__)
 @app.route('/', methods=['GET'])
 def get_ip_address():
     # return the private IP address of the EC2 instance
-    return socket.gethostname()
+    hostname = socket.gethostname()
+    return socket.gethostbyname(hostname)
 
 @app.route('/', methods=['POST'])
 def subprocess_open():
