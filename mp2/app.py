@@ -30,4 +30,4 @@ def update_seed():
         return jsonify(error="Missing 'num' in the request body."), 400
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=8080)
